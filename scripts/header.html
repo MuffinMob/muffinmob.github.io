@@ -1,0 +1,26 @@
+<script>
+    if (window.location.pathname.indexOf('index') > -1) {
+        $('#nav-home').css("background-color", "#181818");
+        console.log($('#nav-home').html());
+    }
+    if (window.location.pathname.indexOf('projects') > -1) {
+        $('#nav-projects').css("background-color", "#181818");
+    }
+    if (window.location.pathname.indexOf('about') > -1) {
+        $('#nav-about').css("background-color", "#181818");
+    }
+    if (window.location.pathname.indexOf('contact') > -1) {
+        $('#nav-contact').css("background-color", "#181818");
+    }
+</script>
+
+<div class="banner">
+    <h1>Muffin Mob</h1>
+</div>
+
+<ul class="navigation">
+    <li><a id="nav-home" href="#">Home</a></li>
+    <li><a id="nav-projects" href="#">Projects</a></li>
+    <li><a id="nav-about" href="#">About</a></li>
+    <li><a id="nav-contact" href="#">Contact</a></li>
+</ul>
