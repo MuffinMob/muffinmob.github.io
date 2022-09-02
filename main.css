@@ -43,12 +43,12 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #121212;
+    background-color: #0e0e0e;
     text-align: center;
 }
 
 .navigation li {
-    float: left;
+    display: inline-block;
 }
 
 .navigation li a {

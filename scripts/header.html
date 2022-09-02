@@ -1,16 +1,12 @@
 <script>
-    if (window.location.pathname.indexOf('index') > -1) {
-        $('#nav-home').css("background-color", "#181818");
-        console.log($('#nav-home').html());
-    }
     if (window.location.pathname.indexOf('projects') > -1) {
         $('#nav-projects').css("background-color", "#181818");
-    }
-    if (window.location.pathname.indexOf('about') > -1) {
+    } else if (window.location.pathname.indexOf('about') > -1) {
         $('#nav-about').css("background-color", "#181818");
-    }
-    if (window.location.pathname.indexOf('contact') > -1) {
+    } else if (window.location.pathname.indexOf('contact') > -1) {
         $('#nav-contact').css("background-color", "#181818");
+    } else {
+        $('#nav-home').css("background-color", "#181818");
     }
 </script>
 
