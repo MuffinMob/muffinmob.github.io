@@ -222,14 +222,13 @@ hr.solid {
     .bio_name {
         font-size: 24px;
     }
-
-    .icons a {
-        width: 20px;
-        height: 20px;
-    }
 }
 
 @media only screen and (max-width: 749px) {
+    .biowrapper {
+        width: 80%;
+    }
+
     .bio_desc p {
         font-size: 12px;
     }
@@ -245,16 +244,15 @@ hr.solid {
 }
 
 @media only screen and (max-width: 566px) {
+    .biowrapper {
+        width: 90%;
+    }
+
     .bio_desc p {
         font-size: 10px;
     }
 
     .bio_name {
         font-size: 20px;
-    }
-
-    .icons a {
-        width: 15px;
-        height: 15px;
     }
 }
