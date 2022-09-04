@@ -110,6 +110,7 @@ hr.solid {
 .bio img {
     width: 300px;
     height: 300px;
+    margin-left: 1em;
 }
 
 .bio_desc {
