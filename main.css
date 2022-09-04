@@ -65,6 +65,201 @@ body {
 
 .pagewrapper {
     width: auto;
-    height: 100%;
+    height: auto;
     text-align: center;
+}
+
+
+/*About Page*/
+
+hr.solid {
+    border-top: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.biowrapper {
+    background-color: #141414;
+    width: 50%;
+    margin: 20px auto;
+}
+
+.bio_name {
+    padding-top: 10px;
+}
+
+.bio {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: row;
+    min-height: 325px;
+}
+
+.pagewrapper h1 {
+    color: white;
+    margin: 0 auto;
+    margin-bottom: .5em;
+}
+
+.border {
+    width: 50%;
+    height: 2px;
+    background-color: rgba(150, 150, 150, .2);
+    margin: 0 auto;
+}
+
+.bio img {
+    width: 300px;
+    height: 300px;
+}
+
+.bio_desc {
+    display: inline-block;
+    height: auto;
+    padding: 1em;
+    text-indent: 40px;
+    text-align: left;
+    vertical-align: middle;
+    color: rgb(124, 124, 124);
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+.icons a {
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    filter: invert(33%) sepia(19%) saturate(0%) hue-rotate(181deg) brightness(89%) contrast(86%);
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.icons .link {
+    background-image: url("images/icons/link.png")
+}
+
+.icons .link:hover {
+    opacity: 100%;
+    filter: invert(92%) sepia(0%) saturate(1528%) hue-rotate(167deg) brightness(98%) contrast(75%);
+}
+
+.icons .twitter {
+    background-image: url("images/icons/twitter.png")
+}
+
+.icons .twitter:hover {
+    filter: invert(55%) sepia(81%) saturate(2532%) hue-rotate(175deg) brightness(97%) contrast(96%);
+    opacity: 100%;
+}
+
+.icons .link-kenny {
+    background-image: url("images/icons/kenny1.png")
+}
+
+.icons .link-kenny:hover {
+    background-image: url("images/icons/kenny.png");
+    filter: none;
+    opacity: 100%;
+}
+
+.icons .link-josh {
+    background-image: url("images/icons/josh1.png")
+}
+
+.icons .link-josh:hover {
+    background-image: url("images/icons/josh.png");
+    filter: none;
+    opacity: 100%;
+}
+
+.icons .link-jared {
+    background-image: url("images/icons/jared.png")
+}
+
+.icons .link-jared:hover {
+    filter: invert(30%) sepia(55%) saturate(414%) hue-rotate(201deg) brightness(98%) contrast(90%);
+    opacity: 100%;
+}
+
+@media only screen and (max-width: 1705px) {
+    .bio {
+        flex-direction: column;
+    }
+
+    .bio img {
+        margin: 0 auto;
+    }
+
+    .bio_desc {
+        padding: 1em;
+        text-indent: 0;
+        text-align: center;
+        vertical-align: middle;
+        color: rgb(124, 124, 124);
+    }
+}
+
+@media only screen and (max-width: 949px) {
+    .bio_desc p {
+        font-size: 14px;
+    }
+
+    .bio img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .bio_name {
+        font-size: 24px;
+    }
+
+    .icons a {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .bio_desc p {
+        font-size: 12px;
+    }
+
+    .bio img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .bio_name {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 566px) {
+    .bio_desc p {
+        font-size: 10px;
+    }
+
+    .bio img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .bio_name {
+        font-size: 20px;
+    }
+
+    .icons a {
+        width: 15px;
+        height: 15px;
+    }
 }
