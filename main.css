@@ -58,6 +58,7 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     border-radius: 10px 10px 0px 0px;
+    font-size: 16px;
 }
 
 .navigation li a:hover {
@@ -248,6 +249,16 @@ hr.solid {
 }
 
 @media only screen and (max-width: 749px) {
+    .navigation li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 12px 14px;
+        text-decoration: none;
+        border-radius: 10px 10px 0px 0px;
+        font-size: 14px;
+    }
+
     .biowrapper {
         width: 80%;
     }
