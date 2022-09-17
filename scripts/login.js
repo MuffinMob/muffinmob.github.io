@@ -37,7 +37,7 @@ onAuthStateChanged(auth, (user) => {
     }
 })
 function tryResignUser() {
-    if (localStorage.getItem('email').length > 0 && localStorage.getItem('password').length > 0) {
+    if (localStorage.getItem('email') && localStorage.getItem('password')) {
         $("#email").val(localStorage.getItem('email'));
         $("#password").val(localStorage.getItem('password'));
         login();
