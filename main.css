@@ -1,3 +1,9 @@
+:root {
+    --page-background: #181818;
+    --container-background: #0f0f0f;
+    --default-font: 'Lexend Deca';
+}
+
 /* lexend-deca-regular - latin */
 @font-face {
     font-family: 'Lexend Deca';
@@ -21,8 +27,8 @@
 body {
     width: 100%;
     margin: 0 auto;
-    background-color: #181818;
-    font-family: 'Lexend Deca';
+    background-color: var(--page-background);
+    font-family: var(--default-font);
 }
 
 .banner {
@@ -71,15 +77,31 @@ body {
     text-align: center;
 }
 
+.btn {
+    padding: 7px 12px 7px 12px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000000;
+    font-family: var(--default-font);
+    cursor: pointer;
+}
+
+.btn:hover {
+    -webkit-box-shadow: inset 1px 1px 10px #333;
+    -moz-box-shadow: inset 1px 1px 10px #333;
+    box-shadow: inset 1px 1px 10px #333;
+}
 
 /*About Page*/
-
 hr.solid {
     border-top: 3px solid rgba(255, 255, 255, 0.1);
 }
 
 .biowrapper {
-    background-color: #0f0f0f;
+    background-color: var(--container-background);
     width: 50%;
     margin: 20px auto;
     border-radius: 10px;
@@ -134,7 +156,6 @@ hr.solid {
 .bio_desc a:hover {
     color: #ffffff;
 }
-
 
 .icons {
     display: flex;
@@ -288,5 +309,221 @@ hr.solid {
 
     .bio_name {
         font-size: 20px;
+    }
+}
+
+/*Admin*/
+#login-form {
+    width: 50%;
+    min-width: 500px;
+    max-width: 800px;
+    background-color: var(--container-background);
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 1em
+}
+
+#login-form h1 {
+    font-size: 28px;
+}
+
+#login-form label {
+    color: white;
+    width: 90px;
+    display: inline-block;
+    text-align: right;
+}
+
+#login-form input {
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/*Admin blogs*/
+#adminExistingContainer {
+    background-color: var(--container-background);
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+    min-width: 540px;
+    max-width: 1080px;
+    display: flex;
+    padding: 10px;
+}
+
+#adminExistingContainer .blog-container {
+    background-color: #050505;
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+    margin: 10px 10px 10px 10px;
+}
+
+#adminExistingContainer .blog-container h2 {
+    color: white;
+}
+
+#adminExistingContainer .blog-container p {
+    color: rgb(124, 124, 124);
+    margin-top: -15px;
+}
+
+#adminExistingContainer .blog-container button {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#adminPostContainer {
+    background-color: var(--container-background);
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+    min-width: 540px;
+    max-width: 1080px;
+    padding: 20px;
+    position: relative;
+}
+
+#adminPostContainer #tinymce-title {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+#adminPostContainer .editmessage {
+    color: white;
+}
+
+/*Blogs*/
+.blogcontainer {
+    background-color: var(--container-background);
+    width: 60%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 2em;
+    text-align: left;
+    position: relative;
+}
+
+.tweet {
+    background-color: #00ACEE;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 10px;
+    left: 100%;
+    margin-left: -75px;
+}
+
+.tweet:hover {
+    -webkit-box-shadow: inset 1px 1px 10px #333;
+    -moz-box-shadow: inset 1px 1px 10px #333;
+    box-shadow: inset 1px 1px 10px #333;
+}
+
+.blogcontainer .blogcontent img {
+    max-width: 100%;
+    height: auto;
+}
+
+.blogcontainer .blogcontent {
+    color: rgb(124, 124, 124);
+}
+
+.blogcontainer .blogcontent p {
+    text-indent: 40px;
+}
+
+.blogcontainer .blogcontent a {
+    color: #bbbbbb;
+}
+
+.blogcontainer .blogcontent a:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.blogtitle {
+    text-align: left;
+}
+
+.blogmeta {
+    text-align: left;
+    color: #bdbdbd;
+    margin-bottom: 1em;
+}
+
+.videocontainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    /*9/16 aspect ratio*/
+}
+
+.videocontainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1705px) {}
+
+@media only screen and (max-width: 949px) {
+
+    .bio img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .bio_name {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .blogcontainer {
+        width: 80%;
+    }
+
+    .blogcontainer .blogcontent p,
+    .blogcontainer .blogcontent li,
+    .blogcontainer .blogcontent a {
+        font-size: 14px;
+    }
+
+    .blogtitle {
+        font-size: 22px;
+    }
+
+    .blogmeta {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 566px) {
+    .blogcontainer {
+        width: 85%;
+    }
+
+    .blogcontainer .blogcontent p,
+    .blogcontainer .blogcontent li,
+    .blogcontainer .blogcontent a {
+        font-size: 12px;
+    }
+
+    .blogtitle {
+        font-size: 20px;
+    }
+
+    .blogmeta {
+        font-size: 12px;
     }
 }
