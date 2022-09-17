@@ -27,6 +27,7 @@ const db = getDatabase();
 const dbRef = ref(getDatabase());
 var user;
 
+$('.loginbtn').click(function () { login(); });
 tryResignUser();
 
 onAuthStateChanged(auth, (user) => {
