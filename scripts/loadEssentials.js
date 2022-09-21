@@ -1,5 +1,8 @@
 let favicons = [
-    //{href: "/images/favicons/apple-touch-icon-57x57.png", sizes: "57x57", rel: "apple-touch-icon-precomposed"},
+    { href: "/images/favicons/apple-touch-icon.png", sizes: "180x180", rel: "apple-touch-icon" },
+    { href: "/images/favicons/favicon-32x32.png", sizes: "32x32", rel: "icon", type: "image/png" },
+    { href: "/images/favicons/favicon-16x16.png", sizes: "16x16", rel: "icon", type: "image/png" },
+    { href: "/images/favicons/site.webmanifest", rel: "apple-touch-icon" }
 ]
 
 $(document).ready(function () {
@@ -9,14 +12,22 @@ $(document).ready(function () {
 
     // $("footer").load("/scripts/footer.html"); //import page footer
 
-    // for(let i = 0; i < favicons.length; i++){ //apply favicon to the document head
-    //     let icon = document.createElement("link");
+    for (let i = 0; i < favicons.length; i++) { //apply favicon to the document head
+        let icon = document.createElement("link");
 
-    //     icon.setAttribute("rel", favicons[i].rel);
-    //     icon.setAttribute("href", favicons[i].href);
-    //     icon.setAttribute("sizes", favicons[i].sizes);
-    //     icon.setAttribute("type", favicons[i].href);
+        if (favicons[i].rel) {
+            icon.setAttribute("rel", favicons[i].rel);
+        }
+        if (favicons[i].href) {
+            icon.setAttribute("rel", favicons[i].href);
+        }
+        if (favicons[i].sizes) {
+            icon.setAttribute("rel", favicons[i].sizes);
+        }
+        if (favicons[i].type) {
+            icon.setAttribute("rel", favicons[i].type);
+        }
 
-    //     docHead.appendChild(icon); 
-    // }
+        docHead.appendChild(icon);
+    }
 });
