@@ -3,6 +3,7 @@ let favicons = [
     { href: "/images/favicons/favicon-32x32.png", sizes: "32x32", rel: "icon", type: "image/png" },
     { href: "/images/favicons/favicon-16x16.png", sizes: "16x16", rel: "icon", type: "image/png" },
     { href: "/images/favicons/site.webmanifest", rel: "apple-touch-icon" }
+
 ]
 
 $(document).ready(function () {

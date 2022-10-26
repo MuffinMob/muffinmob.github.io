@@ -3,11 +3,10 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-
 import { getDatabase, ref, set, child, update, remove, get } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"
 
 $(document).ready(function () {
-    // var firebaseApiKey = new URLSearchParams(window.location.search).get('key');
-    // //store firebase api key
-    // if (!localStorage.getItem('firebaseApiKey')) {
-    //     localStorage.setItem('firebaseApiKey', firebaseApiKey);
-    // }
+    $.param = function (key) {
+        var result = new RegExp('[\?&]' + key + '=([^&#]*)').exec(window.location.href);
+        return result != null ? result[1] : '';
+    }
 
     //FIREBASE INITIALIZATION
     const firebaseConfig = {
@@ -28,6 +27,7 @@ $(document).ready(function () {
     const dbRef = ref(getDatabase());
     //END FIREBASE INITIALIZATION 
 
+    //POPULATE PAGE WITH BLOG POSTS
     get(child(dbRef, 'blogs')).then((snapshot) => {
         if (snapshot.exists()) {
             var list = snapshot.val();
@@ -47,7 +47,7 @@ $(document).ready(function () {
                 }).appendTo('.pagewrapper');
 
                 var twitterbtn = document.createElement('a');
-                twitterbtn.href = ('https://twitter.com/intent/tweet?text=Check%20out%20this%20post!%0Ahttps://muffinmob.github.io/index.html%23blog-' + i);
+                twitterbtn.href = ('https://twitter.com/intent/tweet?text=Check%20out%20this%20update%20from%20%40MuffinMob!%0Ahttps://muffinmob.github.io/index.html%3fpost%3d' + i);
                 twitterbtn.className = 'tweet';
                 twitterbtn.innerHTML = 'Tweet';
                 document.getElementById('blog-' + i).append(twitterbtn);
@@ -76,30 +76,21 @@ $(document).ready(function () {
                 }
             }
 
+            //FOCUS SPECIFIC POST IF ONE IS GIVEN
+            var focusPost = $('#blog-' + $.param('post'));
+            if (focusPost.length) {
+                $('html, body').animate({
+                    scrollTop: focusPost.offset().top,
+                    scrollLeft: focusPost.offset().left
+                }, 500);
+            }
+
         } else {
-            //no blogs were found.
+            //NO BLOGS WERE FOUND
             console.log("no blogs were found!");
         }
     }).catch((error) => {
         console.error(error);
     });
-
-    // const getUrlParameter = (sParam) => {
-    //     let sPageURL = window.location.search.substring(1),
-    //         sURLVariables = sPageURL != undefined && sPageURL.length > 0 ? sPageURL.split('#') : [],
-    //         sParameterName,
-    //         i;
-    //     let split_str = window.location.href.length > 0 ? window.location.href.split('#') : [];
-    //     sURLVariables = split_str != undefined && split_str.length > 1 && split_str[1].length > 0 ? split_str[1].split('&') : [];
-    //     for (i = 0; i < sURLVariables.length; i++) {
-    //         sParameterName = sURLVariables[i].split('=');
-    //         if (sParameterName[0] === sParam) {
-    //             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-    //         }
-    //     }
-    // };
-
-    //set(ref(db, 'accessKey'), accessToken);
-
 }); // End of document.ready
 
